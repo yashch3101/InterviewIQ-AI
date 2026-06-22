@@ -20,7 +20,7 @@ The goal of this platform is to help job seekers prepare more effectively for in
 
 Frontend: https://your-frontend-url.vercel.app
 
-Backend API: https://your-backend-url.onrender.com
+Backend API: https://interviewiq-ai-nxx8.onrender.com
 
 ---
 
