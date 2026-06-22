@@ -269,7 +269,7 @@ Backend/
 ```bash
 git clone https://github.com/your-username/InterviewIQ-AI.git
 
-cd AI-Interview-Platform
+cd InterviewIQ-AI
 ```
 
 ### Backend Setup
