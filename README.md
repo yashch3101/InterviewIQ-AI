@@ -267,7 +267,7 @@ Backend/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/AI-Interview-Platform.git
+git clone https://github.com/your-username/InterviewIQ-AI.git
 
 cd AI-Interview-Platform
 ```
@@ -307,35 +307,6 @@ npm install
 
 npm run dev
 ```
-
----
-
-## Environment Variables
-
-```env
-PORT=
-
-MONGODB_URI=
-
-JWT_SECRET=
-
-GROQ_API_KEY=
-```
-
----
-
-## Future Enhancements
-
-* Voice-Based Mock Interviews
-* AI Interview Simulator
-* Speech Confidence Analysis
-* Emotion Detection
-* Real-Time Interview Evaluation
-* Interview Performance Scoring
-* Company-Specific Interview Preparation
-* Multi-Language Support
-* Resume Improvement Suggestions
-* Cover Letter Generation
 
 ---
 
