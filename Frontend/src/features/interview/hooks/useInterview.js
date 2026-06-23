@@ -9,6 +9,7 @@ export const useInterview = () => {
     const context = useContext(InterviewContext)
     const { interviewId } = useParams()
     const [generatingReport, setGeneratingReport] = useState(false)
+    const [downloadingResume, setDownloadingResume] = useState(false)
 
     if (!context) {
         throw new Error("useInterview must be used within an InterviewProvider")
@@ -75,21 +76,43 @@ export const useInterview = () => {
     }
 
     const getResumePdf = async (interviewReportId) => {
-        setLoading(true)
-        let response
+
+        setDownloadingResume(true)
+
         try {
-            response = await generateResumePdf({ interviewReportId })
-            const url = window.URL.createObjectURL(new Blob([ response ], { type: "application/pdf" }))
+
+            const response = await generateResumePdf({
+                interviewReportId
+            })
+
+            const url = window.URL.createObjectURL(
+                new Blob([response], {
+                    type: "application/pdf"
+                })
+            )
+
             const link = document.createElement("a")
+
             link.href = url
-            link.setAttribute("download", `resume_${interviewReportId}.pdf`)
+
+            link.download = `resume_${interviewReportId}.pdf`
+
             document.body.appendChild(link)
+
             link.click()
-        }
-        catch (error) {
+
+            link.remove()
+
+            window.URL.revokeObjectURL(url)
+
+        } catch (error) {
+
             console.log(error)
+
         } finally {
-            setLoading(false)
+
+            setDownloadingResume(false)
+
         }
     }
 
@@ -101,6 +124,6 @@ export const useInterview = () => {
         }
     }, [ interviewId ])
 
-    return { loading, generatingReport, report, reports, generateReport, getReportById, getReports, getResumePdf }
+    return { loading, generatingReport, downloadingResume, report, reports, generateReport, getReportById, getReports, getResumePdf }
 
 }
