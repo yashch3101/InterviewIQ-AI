@@ -461,3 +461,50 @@ form {
     transform: translateX(350%);
   }
 }
+
+/* =========================
+   MOBILE RESPONSIVE AUTH
+========================= */
+
+@media (max-width: 768px) {
+
+  .auth-right {
+    padding: 1rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .form-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .loading-card {
+    width: 95%;
+  }
+
+  .loading-logo {
+    font-size: 1.5rem;
+  }
+
+  .loading-card h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .form-container {
+    padding: 1.25rem;
+  }
+
+  .input-group input {
+    padding: .85rem;
+  }
+
+  .login-btn {
+    height: 50px;
+  }
+}

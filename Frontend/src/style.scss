@@ -32,3 +32,18 @@ body,
         system-ui,
         sans-serif;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+textarea,
+input,
+button {
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
