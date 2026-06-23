@@ -21,11 +21,29 @@ const Register = () => {
 
     if (loading) {
         return (
-            <main className="auth-loader">
-                <h1>Creating your account...</h1>
+            <main className="loading-screen">
+            <div className="loading-card">
+
+                <div className="ai-loader">
+                <div className="ring ring-1"></div>
+                <div className="ring ring-2"></div>
+                <div className="ring ring-3"></div>
+                </div>
+
+                <h2>Creating Your Account</h2>
+
+                <p>
+                Setting up your profile and preparing your AI workspace...
+                </p>
+
+                <div className="loading-progress">
+                <div className="loading-progress-bar"></div>
+                </div>
+
+            </div>
             </main>
         )
-    }
+        }
 
     return (
         <main className="auth-page">

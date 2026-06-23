@@ -5,7 +5,12 @@ import { useNavigate } from 'react-router'
 
 const Home = () => {
 
-    const { loading, generateReport,reports } = useInterview()
+    const {
+        loading,
+        generatingReport,
+        generateReport,
+        reports
+    } = useInterview()
     const [ jobDescription, setJobDescription ] = useState("")
     const [ selfDescription, setSelfDescription ] = useState("")
     const [selectedFileName, setSelectedFileName] = useState("")
@@ -19,26 +24,26 @@ const Home = () => {
         navigate(`/interview/${data._id}`)
     }
 
-    if (loading) {
-    return (
-        <main className='loading-screen'>
+    if (generatingReport) {
+        return (
+            <main className='loading-screen'>
 
-            <div className='loading-card'>
+                <div className='loading-card'>
 
-                <div className='spinner'></div>
+                    <div className='spinner'></div>
 
-                <h1>Generating Interview Strategy</h1>
+                    <h1>Generating Interview Strategy</h1>
 
-                <p>
-                    AI is analyzing your resume,
-                    job description and skills...
-                </p>
+                    <p>
+                        AI is analyzing your resume,
+                        job description and skills...
+                    </p>
 
-            </div>
+                </div>
 
-        </main>
-    )
-}
+            </main>
+        )
+    }
 
     return (
         <div className='home-page'>
@@ -163,7 +168,7 @@ const Home = () => {
             </div>
 
             {/* Recent Reports List */}
-            {reports.length > 0 && (
+            {reports?.length > 0 && (
                 <section className='recent-reports'>
                     <h2>My Recent Interview Plans</h2>
                     <ul className='reports-list'>
