@@ -18,7 +18,7 @@ The goal of this platform is to help job seekers prepare more effectively for in
 
 # Live Demo
 
-Frontend: https://your-frontend-url.vercel.app
+Frontend: https://interview-iq-ai-ashy.vercel.app/
 
 Backend API: https://interviewiq-ai-nxx8.onrender.com
 
