@@ -248,3 +248,107 @@ form {
         max-width: 100%;
     }
 }
+
+.loading-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(255, 45, 120, 0.15),
+            transparent 40%),
+        #0d1117;
+}
+
+.loading-card {
+    text-align: center;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.loading-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ff2d78
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.loader-ring {
+    width: 90px;
+    height: 90px;
+
+    border: 4px solid rgba(255,255,255,.1);
+    border-top: 4px solid #ff2d78;
+
+    border-radius: 50%;
+
+    margin: 0 auto 2rem;
+
+    animation: spin 1s linear infinite;
+}
+
+.loading-card h2 {
+    color: white;
+    margin-bottom: .75rem;
+}
+
+.loading-message {
+    color: #9ca3af;
+    min-height: 24px;
+}
+
+.loading-dots {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.loading-dots span {
+    width: 10px;
+    height: 10px;
+
+    background: #ff2d78;
+    border-radius: 50%;
+
+    animation: bounce 1.2s infinite;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%,100% {
+        transform: translateY(0);
+        opacity: .5;
+    }
+
+    50% {
+        transform: translateY(-8px);
+        opacity: 1;
+    }
+}
